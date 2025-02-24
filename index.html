@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Specials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .tile {
+            display: inline-block;
+            width: 150px;
+            padding: 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tile" onclick="loadMenuItems('Menu')">Menu</div>
+        <div class="tile" onclick="loadMenuItems(getRandomCategory())">Specials</div>
+        <div class="tile" onclick="loadMenuItems('Map')">Map</div>
+    </div>
+
+    <script>
+        function getRandomCategory() {
+            const categories = ['Lunch', 'Dinner', 'Sushi', 'Drinks', 'Desserts'];
+            return categories[Math.floor(Math.random() * categories.length)];
+        }
+
+        function loadMenuItems(category) {
+            alert('Loading menu items for: ' + category);
+            // In a real scenario, this would dynamically load the content from the server
+            window.location.href = `menu.html?category=${category}`;
+        }
+    </script>
+</body>
+</html>
