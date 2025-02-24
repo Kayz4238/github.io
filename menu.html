@@ -1,0 +1,6 @@
+<h1>Menu Page</h1>
+<p>Category: <span id="category"></span></p>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("category").textContent = params.get("category");
+</script>
